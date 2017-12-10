@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WEBTECH</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/game-card/game-card.html">  
+  </head>
+  <body>
+    <!--<emoji-rain active></emoji-rain>-->
+    <dom-bind>
+        <template is ="dom-bind">
+            <game-card symbol="♠" rank="1234" flippable></game-card>
+            <game-card symbol="♥" rank="4" flippable></game-card>
+            <game-card symbol="♦" rank="k" flippable unrevealed></game-card>
+            <br><br>
+        </template>
+    </dom-bind>
+  </body>
+</html>

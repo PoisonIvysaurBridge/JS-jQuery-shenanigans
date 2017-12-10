@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pick!</title>
+</head>
+<body>
+    <h2>Pick a course!</h2>
+    <p id="courses"></p>
+    <p id="check"></p>
+    <script>
+        var courses = ["LBYADM1", "SW-ENGG", "SYSTIMP", "WEBTECH"];
+        var check="";
+        var txt = "<select>";
+        for(i = 0; i < courses.length; i++){
+            txt += "<option value="+ courses[i] +">"+ courses[i] +"</option>";
+            check += "<input type='checkbox' name='course' value='"+ courses[i] +"'>"+ courses[i] +"<br>"
+        }
+        txt += "</select>";
+
+        document.getElementById("courses").innerHTML = txt;
+        document.getElementById("check").innerHTML = check;
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLOTZ</title>
+
+</head>
+<body>
+<x-foo-from-template>x foo element here</x-foo-from-template>
+
+<div id="container">hi</div>
+<x-foo-from-template></x-foo-from-template>
+<div id="">hi</div>
+<template>
+    <style>
+        p { color: orange; }
+    </style>
+    <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
+    <slot></slot>
+</template>
+
+<script>
+    /* normal vanilla javascript
+    const t = document.querySelector('template');
+    document.querySelector('#container').appendChild(
+        document.importNode(t.content,true)
+    );
+    */
+    // TRYING OUT SHADOW DOM
+/*
+    const header = document.createElement('header');
+    let shadowRoot = header.attachShadow({mode: 'open'});
+    const t = document.querySelector('template');
+    const instance = t.content.cloneNode(true);
+    shadowRoot.appendChild(t.content);
+    document.body.appendChild(header);
+*/
+
+    // TRYING OUT CUSTOM ELEMENT + TEMPLATE + SHADOW DOM
+    customElements.define('x-foo-from-template', class extends HTMLElement {
+        constructor() {
+            super(); // always call super() first in the ctor.
+            let shadowRoot = this.attachShadow({mode: 'open'});
+            const t = document.querySelector('template');
+            const instance = t.content.cloneNode(true);
+            shadowRoot.appendChild(instance); // if t.content is used, the second time you call the custom element, the content will be empty
+            /* this appends the template content to the div above
+            document.querySelector('#container').appendChild(
+                document.importNode(t.content,true)
+            );
+            */
+        }
+
+    });
+</script>
+</body>
+</html>

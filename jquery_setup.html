@@ -1,0 +1,22 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="utf-8">  
+  <title>JS Bin</title>  
+</head>  
+<body>  
+
+<p>Click me!</p>  
+
+<script>
+$("p").bind("click", function(){  
+   $( "<p>This is a click Event</p>").appendTo( "body" );  
+});  
+  
+$("p").bind("dblclick", function(){  
+   $( "<p>This is a double-click Event</p>"  ).appendTo( "body" );  
+}); 
+</script>
+</body>  
+</html>  

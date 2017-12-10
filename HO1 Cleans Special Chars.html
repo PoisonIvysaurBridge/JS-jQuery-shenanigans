@@ -1,0 +1,33 @@
+<html>
+<body>
+	<!--<form action="#" onsubmit="submit()">-->
+		<h2>Input 1: </h2>
+		<input type="text" id="one" required>
+		<p id="demo"> </p>
+		<h2>Input 2: </h2>
+		<input type="text" id="two">
+
+		<input type="submit" onclick="submit()">
+	<!--</form>-->
+
+	<script>
+		function submit() {
+			var one = document.getElementById("one").value;
+			if(!isValid(one)){
+				document.getElementById("demo").innerHTML = "CONTAINS SPECIAL CHARACTERS";
+                document.getElementById("two").value = clean(one);
+                //(function(one){return one.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')})();
+			}
+        }
+
+        function isValid(str){
+            return !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(str);
+        }
+
+        function clean(str){
+			return str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+		}
+	</script>
+</body>
+</html>
+

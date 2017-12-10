@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count!</title>
+</head>
+<body>
+    <button onclick="add()">Add</button>
+    <p id="count">0</p>
+
+    <script>
+        var count = 0;
+        function add() {
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+    </script>
+</body>
+</html>

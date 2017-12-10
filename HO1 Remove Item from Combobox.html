@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIM3</title>
+</head>
+<body>
+    <p>Select an item:</p>
+    <select id="list">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <button onclick="removeItem()">Remove item</button>
+
+    <script>
+        function removeItem() {
+            var list = document.getElementById("list")
+            console.log(list[list.selectedIndex]);
+            list.remove(list.selectedIndex);
+            console.log(list.selectedIndex);
+        }
+    </script>
+</body>
+</html>

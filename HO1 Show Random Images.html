@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIM2</title>
+</head>
+<body>
+    <button onclick="showImage()">Show Image</button><br>
+    <img id="image" src="">
+
+    <script>
+        function showImage() {
+            var images = [
+                'http://ll-c.ooyala.com/e1/dpOGNxYjE6HYtCaIOzY7F-CNW_4ieZna/promo322861364',
+                'http://www.guoguiyan.com/data/out/140/69760281-one-piece-wallpapers.jpg',
+                'https://vignette2.wikia.nocookie.net/onepiece/images/b/b8/One_Piece_Schick_Razors.png/revision/latest?cb=20130224093941',
+                'https://steamuserimages-a.akamaihd.net/ugc/427068361177103301/BD3252D9FC517441F0048DAC8C7DAC1159DBEEE2/'
+            ];
+            var x = images[Math.floor(Math.random() * images.length)];
+            document.getElementById("image").src = x;
+            console.log(x);
+        }
+    </script>
+</body>
+</html>

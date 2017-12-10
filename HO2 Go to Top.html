@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<p id="jQuery"></p>
+		<h1  id="p1" onclick="clicked()" ondblclick="dbClicked()">Back to top</h1>
+		
+		<script>
+		/*
+			function clicked(){
+				document.getElementById("clickMe").innerHTML = "one click";
+			}
+			
+			function dbClicked(){
+				document.getElementById("clickMe").innerHTML = "double click";
+			}
+		*/	
+			var txt = "";
+			for(i = 0; i < 300; i++){
+				txt += "<p> jQuery";
+				console.log(i);
+			}
+			document.getElementById("jQuery").innerHTML = txt;
+			$(document).ready(function(){
+				$("#p1").click(function(){
+					$('html,body').animate({ scrollTop: 0 }, 'veryfast');
+				})
+			});
+		</script>
+	</body>
+</html>

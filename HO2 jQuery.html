@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<p  id="p1" onclick="clicked()" ondblclick="dbClicked()">Click Me!</p>
+		<p id="clickMe"></p>
+		
+		<script>
+            /*
+		      var txt = "";
+			function clicked(){
+                txt += "<p>one click";
+				document.getElementById("clickMe").innerHTML = txt;
+			}
+			
+			function dbClicked(){
+                txt += "<p>double click";
+				document.getElementById("clickMe").innerHTML = txt;
+			}
+		*/
+            
+			$(document).ready(function(){
+				$("#p1").click(function(){
+					$("#clickMe").append('<p>Clicked me once');
+				})
+				$("#p1").dblclick(function(){
+					$("#clickMe").append('<p>Clicked me twice');
+				})
+			});
+            
+		</script>
+	</body>
+</html>
